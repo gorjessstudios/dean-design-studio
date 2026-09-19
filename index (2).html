@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Design — Dean Design Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7F1EA;
+    --dusty-rose:#C98C8C;
+    --blush:#E9CFC9;
+    --ink:#231F1E;
+    --ink-soft:#4A4341;
+    --line:rgba(35,31,30,0.14);
+    --white:#FFFDFB;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Jost',sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+
+  /* NAV */
+  nav.site-nav{
+    padding:26px 0;
+    border-bottom:1px solid var(--line);
+  }
+  nav.site-nav .wrap{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+  }
+  .brand-name{
+    font-family:'Fraunces',serif;
+    font-size:1.15rem;
+    letter-spacing:0.02em;
+  }
+  .nav-links{display:flex;gap:26px;flex-wrap:wrap;font-size:0.92rem;}
+  .nav-links a{text-decoration:none;color:var(--ink-soft);border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s ease;}
+  .nav-links a:hover{border-color:var(--dusty-rose);}
+
+  /* HERO */
+  .hero{padding:88px 0 72px;}
+  .eyebrow{font-size:0.95rem;color:var(--dusty-rose);margin-bottom:18px;}
+  .hero h1{font-size:clamp(2.2rem,4.6vw,3.4rem);max-width:15ch;line-height:1.08;}
+  .hero p{max-width:52ch;color:var(--ink-soft);font-size:1.08rem;margin-top:22px;}
+  .cta{
+    display:inline-block;margin-top:32px;
+    background:var(--ink);color:var(--white);
+    padding:15px 30px;border-radius:2px;
+    text-decoration:none;font-size:0.95rem;
+    transition:background .2s ease;
+  }
+  .cta:hover{background:var(--dusty-rose);}
+  .cta.secondary{background:transparent;color:var(--ink);border:1px solid var(--ink);margin-left:14px;}
+  .cta.secondary:hover{background:var(--ink);color:var(--white);}
+
+  /* SECTION HEADER */
+  .section-head{padding:0 0 44px;max-width:60ch;}
+  .section-head .kicker{color:var(--dusty-rose);font-size:0.92rem;margin-bottom:10px;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);}
+
+  section{padding:76px 0;}
+  section.tint{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+
+  /* TIERS */
+  .tiers{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+  .tier{
+    background:var(--white);
+    border:1px solid var(--line);
+    padding:38px 32px;
+    position:relative;
+    display:flex;flex-direction:column;
+  }
+  .tier.featured{border-color:var(--dusty-rose);}
+  .tier-badge{
+    position:absolute;top:-13px;left:32px;
+    background:var(--dusty-rose);color:var(--white);
+    font-size:0.72rem;padding:5px 12px;letter-spacing:0.03em;
+  }
+  .tier-index{font-size:0.85rem;color:var(--dusty-rose);margin-bottom:14px;}
+  .tier h3{font-size:1.5rem;margin-bottom:8px;}
+  .tier .tagline{color:var(--ink-soft);font-size:0.98rem;margin-bottom:20px;}
+  .tier .price{font-family:'Fraunces',serif;font-size:2.1rem;margin-bottom:6px;}
+  .tier .turnaround{font-size:0.86rem;color:var(--ink-soft);margin-bottom:24px;}
+  .tier ul{list-style:none;margin:0 0 28px;padding:0;flex-grow:1;}
+  .tier li{
+    padding:9px 0;border-top:1px solid var(--line);
+    font-size:0.95rem;color:var(--ink-soft);
+  }
+  .tier li:first-child{border-top:none;}
+  .tier .cta{width:100%;text-align:center;margin-top:auto;}
+
+  /* BUNDLE CALLOUT */
+  .bundle{
+    margin-top:32px;
+    background:var(--blush);
+    padding:28px 32px;
+    display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
+  }
+  .bundle h4{font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:6px;}
+  .bundle p{margin:0;color:var(--ink-soft);font-size:0.95rem;max-width:46ch;}
+  .bundle .amounts{font-family:'Fraunces',serif;font-size:1.05rem;white-space:nowrap;}
+
+  /* ADD-ONS */
+  .addons{border:1px solid var(--line);}
+  .addon-row{
+    display:flex;justify-content:space-between;
+    padding:16px 0;border-top:1px solid var(--line);
+    font-size:0.97rem;
+  }
+  .addon-row:first-child{border-top:none;}
+  .addon-row span:last-child{color:var(--dusty-rose);white-space:nowrap;margin-left:20px;}
+
+  /* PROCESS */
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;}
+  .step .num{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--dusty-rose);margin-bottom:12px;}
+  .step h4{font-size:1.05rem;margin-bottom:8px;font-family:'Jost',sans-serif;font-weight:600;}
+  .step p{font-size:0.92rem;color:var(--ink-soft);margin:0;}
+
+  .notes{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);}
+  .notes p{font-size:0.88rem;color:var(--ink-soft);margin:0 0 10px;}
+
+  footer{padding:50px 0;text-align:center;}
+  footer p{font-size:0.88rem;color:var(--ink-soft);margin:6px 0 0;}
+  footer .brand-name{display:block;margin-bottom:4px;}
+
+  @media (max-width:760px){
+    .tiers{grid-template-columns:1fr;}
+    .process-grid{grid-template-columns:repeat(2,1fr);}
+    .cta.secondary{margin-left:0;margin-top:12px;display:block;width:fit-content;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <div class="brand-name">DEAN DESIGN STUDIO</div>
+    <div class="nav-links">
+      <a href="../#offers">Branding</a>
+      <a href="#sites">Websites</a>
+      <a href="#process">Process</a>
+      <a href="../#reorder">Reorder</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Websites for beauty businesses</div>
+    <h1>You've got the brand. Now give it a home.</h1>
+    <p>A site built around what you actually do all day — booking clients, showing your work, and looking like the business you already are. Built the same way GorJess Studios and jessdean.me were: fast, clean, and made to last.</p>
+    <a class="cta" href="#sites">See site packages</a>
+    <a class="cta secondary" href="#process">How it works</a>
+  </div>
+</header>
+
+<section id="sites">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Pick your build</div>
+      <h2>One page or a full site — either way, it's yours to keep.</h2>
+    </div>
+
+    <div class="tiers">
+      <div class="tier">
+        <div class="tier-index">01 / The Landing</div>
+        <h3>Give people one place to land.</h3>
+        <p class="tagline">A single, focused page that says who you are and gets people to book.</p>
+        <div class="price">$225</div>
+        <div class="turnaround">7 business days · from the day your content is in</div>
+        <ul>
+          <li>Hero, services, and about section</li>
+          <li>Contact / booking inquiry form</li>
+          <li>Social links and photo gallery</li>
+          <li>Mobile-friendly, fast-loading build</li>
+          <li>2 revision rounds</li>
+        </ul>
+        <a class="cta" href="#intake">Start my site</a>
+      </div>
+
+      <div class="tier featured">
+        <div class="tier-badge">Most popular</div>
+        <div class="tier-index">02 / The Full Site</div>
+        <h3>Show up fully, everywhere.</h3>
+        <p class="tagline">A complete multi-page site for a business that's ready to be found.</p>
+        <div class="price">$750</div>
+        <div class="turnaround">10 business days · from the day your content is in</div>
+        <ul>
+          <li>Everything in The Landing</li>
+          <li>Home, About, Services, Gallery, Contact pages</li>
+          <li>Booking / inquiry form routed to your inbox</li>
+          <li>Custom domain connection</li>
+          <li>2 revision rounds</li>
+        </ul>
+        <a class="cta" href="#intake">Start my site</a>
+      </div>
+    </div>
+
+    <div class="bundle">
+      <div>
+        <h4>Already getting branded? Add your site for less.</h4>
+        <p>Pair a site with any Dean Design branding package — your visual identity carries straight into the build, so it moves faster.</p>
+      </div>
+      <div class="amounts">+ Landing $180 · + Full Site $600</div>
+    </div>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Complete the build</div>
+      <h2>Add-ons</h2>
+    </div>
+    <div class="addons">
+      <div class="addon-row"><span>Additional page</span><span>$75+</span></div>
+      <div class="addon-row"><span>Booking system integration</span><span>$100+</span></div>
+      <div class="addon-row"><span>Blog / content section</span><span>$100+</span></div>
+      <div class="addon-row"><span>Domain purchase &amp; setup (no domain yet)</span><span>$40+</span></div>
+      <div class="addon-row"><span>Additional revision round</span><span>$40</span></div>
+      <div class="addon-row"><span>Rush build (move up in queue)</span><span>$75+</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">How you get a site</div>
+      <h2>From questionnaire to live link.</h2>
+    </div>
+    <div class="process-grid">
+      <div class="step">
+        <div class="num">01</div>
+        <h4>Pick your package</h4>
+        <p>Landing or Full Site, with or without a branding bundle.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h4>Send your content</h4>
+        <p>Fill out the site questionnaire and share your text, photos, and booking link.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h4>We build it</h4>
+        <p>Your site is built and sent over as a private preview link to review.</p>
+      </div>
+      <div class="step">
+        <div class="num">04</div>
+        <h4>You approve, it goes live</h4>
+        <p>Submit your revisions, approve the final build, and it's connected to your domain.</p>
+      </div>
+    </div>
+
+    <div class="notes">
+      <p>Full payment secures your project — the turnaround clock starts once your questionnaire and content are complete, not on the day you pay.</p>
+      <p>Each package includes 2 revision rounds. Please send revision requests together as one consolidated round.</p>
+      <p>You own the finished site. Ongoing edits after launch are billed hourly or covered under a maintenance add-on, available on request.</p>
+    </div>
+  </div>
+</section>
+
+<footer id="intake">
+  <div class="wrap">
+    <span class="brand-name">DEAN DESIGN STUDIO</span>
+    <p>Websites for beauty professionals · Designed by Dean.</p>
+    <p><a href="../#offers" style="text-decoration:underline;">Start with your brand</a> or reach out directly to begin your site.</p>
+  </div>
+</footer>
+
+</body>
+</html>
